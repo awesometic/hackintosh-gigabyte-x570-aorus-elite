@@ -13,8 +13,8 @@ This repository contains the EFI directory for Hackintosh system. Especially, th
 | Memory       | Samsung DDR4 2666MHz 16GB 2EA                    | Overclocked at 3200MHz with 16-18-18-36 timing |
 | Graphics     | XFX AMD Radeon RX 5700 XT 8GB GDDR6 RAW II Ultra |                                                |
 | NVMe         | WD Black SN750 500GB                             | macOS installed                                |
-| SSD 1        | ADATA SP920 256GB                                | Windows installed                              |
-| SSD 2        | Sandisk Ultra 3D 1TB                             | Shared storage between those two OSes          |
+| SSD 1        | Sandisk Ultra 3D 1TB                             | Windows installed                              |
+| SSD 2        | ADATA SP920 256GB                                | Shared storage between those two OSes          |
 | PCI Ethernet | EFM ipTIME PX2500 2.5 GbE LAN Card (RTL8125B)    | Using this as the main Ethernet device         |
 | BT/WIFI      | Fenvi T919 (BCM94360CD)                          |                                                |
 | PSU          | Antec EAG PRO 750W 80PLUS GOLD Modular           |                                                |
