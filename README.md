@@ -33,23 +33,58 @@ This repository contains the EFI directory for Hackintosh system. Especially, th
 
 ### OpenCore
 
-- 0.6.4
+- Version: 0.6.5
 
 ### ACPI
 
+- SSDT-EC-USBX.aml
+- SSDT-HPET.aml
+- SSDT-NVME.aml
+- SSDT-XHC.aml
+
 ### Drivers
+
+- AudioDxe.efi
+- HfsPlus.efi
+- OpenRuntime.efi
 
 ### Kexts
 
+- AMDRyzenCPUPowerManagement.kext
+- AppleALC.kext
+- AppleMCEReporterDisabler.kext
+- Lilu.kext
+- LucyRTL8125Ethernet.kext
+- NVMeFix.kext
+- SMCAMDProcessor.kext
+- SmallTreeIntel82576.kext
+- VirtualSMC.kext
+- WhateverGreen.kext
+
 ### Tools
+
+- CleanNvram.efi
+- OpenShell.efi
+- ResetSystem.efi
 
 ## What works and what doesn't work
 
 ### Works
 
+- Almost everything including Apple continuity (Handoff, iMessage, Airdrop, Facetime, ...).
+
 ### Doesn't work
 
+- Virtualization is not perfectly working.
+- Sleep seems like occur kernel panic sometimes.
+- A 3.5mm Microphone. A USB Microphone is working.
+- Specific professional applications may need to be patched for AMD processor such as Adobe apps, Davinci Resolve, etc.
+
 ## To do
+
+- USB mapping by ACPI seems like not matured.
+- Enable the Apple boot chime.
+- Finishing this README.md file.
 
 ## References
 
