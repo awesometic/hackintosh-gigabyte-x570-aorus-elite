@@ -2,14 +2,14 @@
 
 ## What is this
 
-This repository contains the EFI directory for Hackintosh system. Especially, this is designed for the Ryzen Zen2/3 system with a specific mainboard. This is of course though. :)
+This repository contains the EFI directory for Ryzen 3900X and Gigabyte X570 Aorus Elite combo, with somewhat diverse additional components.
 
 ## Specification of my computer
 
 | Component    | Product Name                                     | Note                                           |
 |--------------|--------------------------------------------------|------------------------------------------------|
 | CPU          | AMD Ryzen 9 3900X                                | PBO enabled                                    |
-| Mainboard    | Gigabyte X570 Aorus Elite                        | F31 BIOS                                       |
+| Mainboard    | Gigabyte X570 Aorus Elite                        | F33a BIOS                                       |
 | Memory       | Samsung DDR4 2666MHz 16GB 2EA                    | Overclocked at 3200MHz with 16-18-18-36 timing |
 | Graphics     | XFX AMD Radeon RX 5700 XT 8GB GDDR6 RAW II Ultra |                                                |
 | NVMe         | WD Black SN750 500GB                             | macOS installed                                |
@@ -33,39 +33,42 @@ This repository contains the EFI directory for Hackintosh system. Especially, th
 
 ### OpenCore
 
-- Version: 0.6.5
+- Version: 0.6.6
 
 ### ACPI
 
-- SSDT-EC-USBX.aml
 - SSDT-HPET.aml
 - SSDT-NVME.aml
+- SSDT-PLUG.aml
+- SSDT-SBRG.aml
+- SSDT-SBUS-MCHC.aml
+- SSDT-USBX.aml
 - SSDT-XHC.aml
 
 ### Drivers
 
-- AudioDxe.efi
-- HfsPlus.efi
+- OpenCanopy.efi
+- OpenHfsPlus.efi
 - OpenRuntime.efi
 
 ### Kexts
 
+- AGPMInjector.kext
 - AMDRyzenCPUPowerManagement.kext
 - AppleALC.kext
 - AppleMCEReporterDisabler.kext
+- CtlnaAHCIPort.kext
 - Lilu.kext
 - LucyRTL8125Ethernet.kext
 - NVMeFix.kext
-- SMCAMDProcessor.kext
 - SmallTreeIntel82576.kext
+- SMCAMDProcessor.kext
 - VirtualSMC.kext
 - WhateverGreen.kext
 
 ### Tools
 
-- CleanNvram.efi
 - OpenShell.efi
-- ResetSystem.efi
 
 ## What works and what doesn't work
 
@@ -80,12 +83,7 @@ This repository contains the EFI directory for Hackintosh system. Especially, th
 - A 3.5mm Microphone. A USB Microphone is working.
 - Specific professional applications may need to be patched for AMD processor such as Adobe apps, Davinci Resolve, etc.
 
-## To do
-
-- USB mapping by ACPI seems like not matured.
-- Enable the Apple boot chime.
-- Finishing this README.md file.
-
 ## References
 
 - https://dortania.github.io/OpenCore-Install-Guide/
+- https://forum.amd-osx.com/index.php?threads/ms-x570-aorus-elite-5700-xt-r7-3800x-big-sur-oc-0-6-6.1524/
