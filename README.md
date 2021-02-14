@@ -42,7 +42,7 @@ This repository contains the EFI directory for Ryzen 3900X and Gigabyte X570 Aor
 - SSDT-PLUG.aml
 - SSDT-SBRG.aml
 - SSDT-SBUS-MCHC.aml
-- SSDT-USBX.aml
+- SSDT-EC-USBX-DESKTOP.aml
 - SSDT-XHC.aml
 
 ### Drivers
