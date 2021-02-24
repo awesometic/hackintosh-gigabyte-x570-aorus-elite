@@ -1,5 +1,7 @@
 # Ryzen Hackintosh EFI
 
+![Ryzen Hackintosh](docs/hackintosh_macos_bigsur.png)
+
 ## What is this
 
 This repository contains the EFI directory for Ryzen 3900X and Gigabyte X570 Aorus Elite combo, with somewhat diverse additional components.
