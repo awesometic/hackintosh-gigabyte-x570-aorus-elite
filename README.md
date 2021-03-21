@@ -33,9 +33,15 @@ This repository contains the EFI directory for Ryzen 3900X and Gigabyte X570 Aor
 - This EFI contains additional kexts and PCI informations in **config.plist** rather than the essential things for X570 + Zen2 CPU. You should remove them to apply this to your PC. I recommend you use this as only a reference resource. You should make your own config.plist file for your PC.
 - **I'm not responsible for any damage to your device with this EFI. Process at your own risk!**
 
+### One more, check this before you use
+
+In the [config.plist](EFI/OC/config.plist) file, I've replaced the private serial codes into the `EDIT_HERE` words because to keep into be safe my personal information.
+
+So if you are going to use this, you have to make sure that the `EDIT_HERE` text must be changed to yours. To generate the serial key, please refer to the [Dortania's OpenCore Guide](https://dortania.github.io/OpenCore-Install-Guide/AMD/zen.html#platforminfo). When you about to generate one, you should select **iMacPro1,1** to proper use your machine.
+
 ### OpenCore
 
-- Version: 0.6.6
+- Version: 0.6.7
 
 ### ACPI
 
