@@ -84,14 +84,17 @@ So if you are going to use this, you have to make sure that the `EDIT_HERE` text
 
 - Almost everything including Apple continuity (Handoff, iMessage, Airdrop, Facetime, ...).
 
+### Partially works
+
+- Analog audio including speakers and microphone. But USB Speaker (USB-DAC) and USB microphone is working.
+- Specific professional applications may need to be patched for AMD processor such as Adobe apps, Davinci Resolve, etc.
+- Virtualization (Apple Hypervisor) is not working but VirtualBox works.
+
 ### Doesn't work
 
-- Virtualization is not perfectly working.
-- Sleep seems like occur kernel panic sometimes.
-- A 3.5mm Microphone. A USB Microphone is working.
-- Specific professional applications may need to be patched for AMD processor such as Adobe apps, Davinci Resolve, etc.
+- Couldn't find any totally not working things yet, but maybe somewhat exist which I'm not using (I am a software developer :smiley:). Please refer to the [CPU support part of the Dortania's OpenCore Guide](https://dortania.github.io/OpenCore-Install-Guide/macos-limits.html#cpu-support).
 
 ## References
 
-- https://dortania.github.io/OpenCore-Install-Guide/
-- https://forum.amd-osx.com/index.php?threads/ms-x570-aorus-elite-5700-xt-r7-3800x-big-sur-oc-0-6-6.1524/
+- <https://dortania.github.io/OpenCore-Install-Guide/>
+- <https://forum.amd-osx.com/index.php?threads/ms-x570-aorus-elite-5700-xt-r7-3800x-big-sur-oc-0-6-6.1524/>
