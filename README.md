@@ -41,7 +41,7 @@ So if you are going to use this, you have to make sure that the `EDIT_HERE` text
 
 ### OpenCore
 
-- Version: 0.6.8
+- Version: 0.6.9
 
 ### ACPI
 
