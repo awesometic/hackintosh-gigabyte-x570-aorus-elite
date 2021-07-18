@@ -11,11 +11,12 @@ This repository contains the EFI directory for Ryzen 3900X and Gigabyte X570 Aor
 | Component    | Product Name                                     | Note                                           |
 |--------------|--------------------------------------------------|------------------------------------------------|
 | CPU          | AMD Ryzen 9 3900X                                | PBO enabled                                    |
-| Mainboard    | Gigabyte X570 Aorus Elite                        | F33a BIOS                                       |
+| Mainboard    | Gigabyte X570 Aorus Elite                        | F35 BIOS                                       |
 | Memory       | Samsung DDR4 2666MHz 16GB 2EA                    | Overclocked at 3200MHz with 16-18-18-36 timing |
-| Graphics     | XFX AMD Radeon RX 5700 XT 8GB GDDR6 RAW II Ultra |                                                |
-| NVMe         | WD Black SN750 500GB                             | macOS installed                                |
-| SSD 1        | Sandisk Ultra 3D 1TB                             | Windows installed                              |
+| Graphics     | XFX AMD Radeon RX 5700 XT 8GB GDDR6 RAW II Ultra | Changed its thermal pad and thermal paste      |
+| NVMe 1       | WD Black SN750 500GB                             | macOS 11.4 installed                           |
+| NVMe 2       | RevuAhn NX2300 1TB (using PCIe to NVMe adapter)  | Linux KDE neon installed                       |
+| SSD 1        | Sandisk Ultra 3D 1TB                             | Windows 11 installed                           |
 | SSD 2        | ADATA SP920 256GB                                | Shared storage between those two OSes          |
 | PCI Ethernet | EFM ipTIME PX2500 2.5 GbE LAN Card (RTL8125B)    | Using this as the main Ethernet device         |
 | BT/WIFI      | Fenvi T919 (BCM94360CD)                          |                                                |
@@ -41,7 +42,7 @@ So if you are going to use this, you have to make sure that the `EDIT_HERE` text
 
 ### OpenCore
 
-- Version: 0.6.9
+- Version: 0.7.1
 
 ### ACPI
 
@@ -69,6 +70,7 @@ So if you are going to use this, you have to make sure that the `EDIT_HERE` text
 - Lilu.kext
 - LucyRTL8125Ethernet.kext
 - NVMeFix.kext
+- RestrictEvents.kext
 - SmallTreeIntel82576.kext
 - SMCAMDProcessor.kext
 - VirtualSMC.kext
@@ -92,6 +94,7 @@ So if you are going to use this, you have to make sure that the `EDIT_HERE` text
 
 ### Doesn't work
 
+- Sidecar
 - Couldn't find any totally not working things yet, but maybe somewhat exist which I'm not using (I am a software developer :smiley:). Please refer to the [CPU support part of the Dortania's OpenCore Guide](https://dortania.github.io/OpenCore-Install-Guide/macos-limits.html#cpu-support).
 
 ## References
