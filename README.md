@@ -91,12 +91,12 @@ So if you are going to use this, you have to make sure that the `EDIT_HERE` text
 
 - Analog audio including speakers and microphone. But USB Speaker (USB-DAC) and USB microphone is working.
 - Specific professional applications may need to be patched for AMD processor such as Adobe apps, Davinci Resolve, etc.
-- Virtualization (Apple Hypervisor) is not working but VirtualBox works.
+- Virtualization (Apple Hypervisor and the apps using this like AVD on Android Studio, Parallels) is not working but VirtualBox works.
 
 ### Doesn't work
 
 - Sidecar
-- Couldn't find any totally not working things yet, but maybe somewhat exist which I'm not using (I am a software developer :smiley:). Please refer to the [CPU support part of the Dortania's OpenCore Guide](https://dortania.github.io/OpenCore-Install-Guide/macos-limits.html#cpu-support).
+- Probably there's something that I couldn't find yet (I am a software engineer :smiley:). For further information that the common limits of the AMD Hackintosh systems, please refer to the [CPU support part of the Dortania's OpenCore Guide](https://dortania.github.io/OpenCore-Install-Guide/macos-limits.html#cpu-support).
 
 ## References
 
