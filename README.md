@@ -18,7 +18,7 @@ This repository contains the EFI directory for Ryzen 3900X and Gigabyte X570 Aor
 | NVMe 1       | WD Black SN750 500GB                             | macOS 11.4 installed                           |
 | NVMe 2       | RevuAhn NX2300 1TB (using PCIe to NVMe adapter)  | Linux KDE neon installed                       |
 | SSD 1        | Sandisk Ultra 3D 1TB                             | Windows 11 installed                           |
-| SSD 2        | ADATA SP920 256GB                                | Shared storage between those two OSes          |
+| SSD 2        | ADATA SP920 256GB                                | Miscellaneous storage                          |
 | PCI Ethernet | EFM ipTIME PX2500 2.5 GbE LAN Card (RTL8125B)    | Using this as the main Ethernet device         |
 | BT/WIFI      | Fenvi T919 (BCM94360CD)                          |                                                |
 | PSU          | Antec EAG PRO 750W 80PLUS GOLD Modular           |                                                |
