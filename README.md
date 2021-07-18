@@ -1,6 +1,7 @@
 # Ryzen Hackintosh EFI
 
 ![Ryzen Hackintosh](docs/hackintosh_macos_bigsur.png)
+![Ryzen Hackintosh - About this Mac](docs/about_this_mac.png)
 
 ## What is this
 
