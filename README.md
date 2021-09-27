@@ -1,6 +1,6 @@
 # Ryzen Hackintosh EFI
 
-![Ryzen Hackintosh](docs/hackintosh_macos_bigsur.png)
+![Ryzen Hackintosh](docs/hackintosh_macos_monterey.png)
 ![Ryzen Hackintosh - About this Mac](docs/about_this_mac.png)
 
 ## What is this
@@ -15,7 +15,7 @@ This repository contains the EFI directory for Ryzen 3900X and Gigabyte X570 Aor
 | Mainboard    | Gigabyte X570 Aorus Elite                        | F35 BIOS                                       |
 | Memory       | Samsung DDR4 2666MHz 16GB 2EA                    | Overclocked at 3600MHz with 18-22-22-44 timing |
 | Graphics     | XFX AMD Radeon RX 5700 XT 8GB GDDR6 RAW II Ultra | Changed its thermal pad and thermal paste      |
-| NVMe 1       | WD Black SN750 500GB                             | macOS 11.6 installed                           |
+| NVMe 1       | WD Black SN750 500GB                             | macOS 12.0 beta installed                    |
 | NVMe 2       | RevuAhn NX2300 1TB (using PCIe to NVMe adapter)  | Manjaro KDE installed                          |
 | SSD 1        | Sandisk Ultra 3D 1TB                             | Windows 11 installed                           |
 | SSD 2        | ADATA SP920 256GB                                | Miscellaneous storage                          |
@@ -57,7 +57,7 @@ Please refer to [the author's description](https://github.com/AMD-OSX/AMD_Vanill
 
 ### OpenCore
 
-- Version: 0.7.3
+- Version: 0.7.4 beta (2021. 9. 27)
 
 ### ACPI
 
