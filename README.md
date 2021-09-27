@@ -13,10 +13,10 @@ This repository contains the EFI directory for Ryzen 3900X and Gigabyte X570 Aor
 |--------------|--------------------------------------------------|------------------------------------------------|
 | CPU          | AMD Ryzen 9 3900X                                | PBO enabled                                    |
 | Mainboard    | Gigabyte X570 Aorus Elite                        | F35 BIOS                                       |
-| Memory       | Samsung DDR4 2666MHz 16GB 2EA                    | Overclocked at 3200MHz with 16-18-18-36 timing |
+| Memory       | Samsung DDR4 2666MHz 16GB 2EA                    | Overclocked at 3600MHz with 18-22-22-44 timing |
 | Graphics     | XFX AMD Radeon RX 5700 XT 8GB GDDR6 RAW II Ultra | Changed its thermal pad and thermal paste      |
-| NVMe 1       | WD Black SN750 500GB                             | macOS 11.4 installed                           |
-| NVMe 2       | RevuAhn NX2300 1TB (using PCIe to NVMe adapter)  | Linux KDE neon installed                       |
+| NVMe 1       | WD Black SN750 500GB                             | macOS 11.6 installed                           |
+| NVMe 2       | RevuAhn NX2300 1TB (using PCIe to NVMe adapter)  | Manjaro KDE installed                          |
 | SSD 1        | Sandisk Ultra 3D 1TB                             | Windows 11 installed                           |
 | SSD 2        | ADATA SP920 256GB                                | Miscellaneous storage                          |
 | PCI Ethernet | EFM ipTIME PX2500 2.5 GbE LAN Card (RTL8125B)    | Using this as the main Ethernet device         |
@@ -41,9 +41,23 @@ In the [config.plist](EFI/OC/config.plist) file, I've replaced the private seria
 
 So if you are going to use this, you have to make sure that the `EDIT_HERE` text must be changed to yours. To generate the serial key, please refer to the [Dortania's OpenCore Guide](https://dortania.github.io/OpenCore-Install-Guide/AMD/zen.html#platforminfo). When you about to generate one, you should select **iMacPro1,1** to proper use your machine.
 
+### You got another one you must check
+
+From the recent AMD CPU patch, now we have to specify the CPU core counts to the `algrey - Force cpuid_cores_per_package` nodes. Currently, my EFI setup sets that for the **12-core** CPU model since I'm using Ryzen 3900X.
+
+- `algrey - Force cpuid_cores_per_package`
+  - 10.13,10.14
+    - B8**0C**0000 0000
+  - 10.15,11.0
+    - BA**0C**0000 0000
+  - 12.0
+    - BA**0C**0000 0090
+
+Please refer to [the author's description](https://github.com/AMD-OSX/AMD_Vanilla#read-me-first) to get further information.
+
 ### OpenCore
 
-- Version: 0.7.1
+- Version: 0.7.3
 
 ### ACPI
 
