@@ -39,7 +39,10 @@ This repository contains the EFI directory for Ryzen 3900X and Gigabyte X570 Aor
 
 In the [config.plist](EFI/OC/config.plist) file, I've replaced the private serial codes into the `EDIT_HERE` words because to keep into be safe my personal information.
 
-So if you are going to use this, you have to make sure that the `EDIT_HERE` text must be changed to yours. To generate the serial key, please refer to the [Dortania's OpenCore Guide](https://dortania.github.io/OpenCore-Install-Guide/AMD/zen.html#platforminfo). When you about to generate one, you should select **iMacPro1,1** to proper use your machine.
+So if you are going to use this, you have to make sure that the `EDIT_HERE` text must be changed to yours. To generate the serial key, please refer to the [Dortania's OpenCore Guide](https://dortania.github.io/OpenCore-Install-Guide/AMD/zen.html#platforminfo). When you about to generate one, you should select **MacPro7,1** to proper use your machine.
+
+> - If you are going to convert SMBIOS from **iMacPro1,1** to **MacPro7,1**, make sure that you must logout Apple ID from your current system and regenerate all the SMBIOS details such as MLB, serial number, UUID for MacPro7,1.
+> - If your CPU has less than 8 cores, go to `config.plist` file and find "PlatformInfo->Generic" and change the "ProcessorType" from 0 to 1537.
 
 ### You got another one you must check
 
@@ -116,3 +119,4 @@ Please refer to [the author's description](https://github.com/AMD-OSX/AMD_Vanill
 
 - <https://dortania.github.io/OpenCore-Install-Guide/>
 - <https://forum.amd-osx.com/index.php?threads/ms-x570-aorus-elite-5700-xt-r7-3800x-big-sur-oc-0-6-6.1524/>
+- <https://forum.amd-osx.com/index.php?threads/audiogods-gigabyte-aorus-x570-pro-pro-wifi-ultra-master-big-sur-monterey-beta-opencore-0-7-3-efi.1344/>
