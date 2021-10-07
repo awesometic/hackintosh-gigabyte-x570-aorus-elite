@@ -60,7 +60,7 @@ Please refer to [the author's description](https://github.com/AMD-OSX/AMD_Vanill
 
 ### OpenCore
 
-- Version: 0.7.4 beta (2021. 9. 27)
+- Version: 0.7.4
 
 ### ACPI
 
