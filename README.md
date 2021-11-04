@@ -15,24 +15,25 @@ This repository contains the EFI directory for Ryzen 3900X and Gigabyte X570 Aor
 | Mainboard    | Gigabyte X570 Aorus Elite                        | F35 BIOS                                       |
 | Memory       | Samsung DDR4 2666MHz 16GB 2EA                    | Overclocked at 3600MHz with 18-22-22-44 timing |
 | Graphics     | XFX AMD Radeon RX 5700 XT 8GB GDDR6 RAW II Ultra | Changed its thermal pad and thermal paste      |
-| NVMe 1       | WD Black SN750 500GB                             | macOS 12.0 beta installed                    |
-| NVMe 2       | RevuAhn NX2300 1TB (using PCIe to NVMe adapter)  | Manjaro KDE installed                          |
-| SSD 1        | Sandisk Ultra 3D 1TB                             | Windows 11 installed                           |
-| SSD 2        | ADATA SP920 256GB                                | Miscellaneous storage                          |
+| NVMe 1       | Samsung 980 PRO 1TB                              | Windows 11 installed                           |
+| NVMe 2       | RevuAhn NX2300 1TB                               | KDE neon installed                             |
+| NVMe 3       | WD Black SN750 500GB (via PCIe to NVMe adapter)  | macOS 12 installed                             |
+| SSD 1        | Sandisk Ultra 3D 1TB                             | Miscellaneous storage                          |
 | PCI Ethernet | EFM ipTIME PX2500 2.5 GbE LAN Card (RTL8125B)    | Using this as the main Ethernet device         |
 | BT/WIFI      | Fenvi T919 (BCM94360CD)                          |                                                |
 | PSU          | Antec EAG PRO 750W 80PLUS GOLD Modular           |                                                |
-| CPU Paste    | Thermal Grizzly Kryonaut                         |                                                |
+| CPU Paste    | Thermalright TFX                                 |                                                |
 | CPU Cooler   | Thermalright Le GRAND MACHO RT                   |                                                |
 | MEM Cooler   | BRAVOTEC JONSBO NC-1 Black RGB                   |                                                |
 | Case         | 3RSYS L530                                       |                                                |
 | USB DAC      | Audinst HUD-DX1 Blue24                           |                                                |
+| USB MIC      | Blue Yeti X                                      |                                                |
 
 ## EFI structure
 
 ### WARNING
 
-- This EFI contains additional kexts and PCI informations in **config.plist** rather than the essential things for X570 + Zen2 CPU. You should remove them to apply this to your PC. I recommend you use this as only a reference resource. You should make your own config.plist file for your PC.
+- This EFI contains additional kexts in **config.plist** rather than the essential things for X570 + Zen2 CPU. You should remove them to apply this to your PC. I recommend you use this as only a reference resource, do not use this configuration on the fly or you have to know what you are going to do. You should make your own config.plist file for your PC.
 - **I'm not responsible for any damage to your device with this EFI. Process at your own risk!**
 
 ### One more, check this before you use
@@ -88,9 +89,11 @@ Please refer to [the author's description](https://github.com/AMD-OSX/AMD_Vanill
 - Lilu.kext
 - LucyRTL8125Ethernet.kext
 - NVMeFix.kext
+- RadeonSensor.kext
 - RestrictEvents.kext
 - SmallTreeIntel82576.kext
 - SMCAMDProcessor.kext
+- SMCRadeonSensor.kext
 - VirtualSMC.kext
 - WhateverGreen.kext
 
@@ -103,17 +106,17 @@ Please refer to [the author's description](https://github.com/AMD-OSX/AMD_Vanill
 ### Works
 
 - Almost everything including Apple continuity (Handoff, iMessage, Airdrop, Facetime, ...).
+- Also analog audio output on the front/back panel works, but not tested line in/out, digital out, and microphone
 
 ### Partially works
 
-- Analog audio including speakers and microphone. But USB Speaker (USB-DAC) and USB microphone is working.
-- Specific professional applications may need to be patched for AMD processor such as Adobe apps, Davinci Resolve, etc.
-- Virtualization (Apple Hypervisor and the apps using this like AVD on Android Studio, Parallels) is not working but VirtualBox works.
+- [CPU support part of the Dortania's OpenCore Guide](https://dortania.github.io/OpenCore-Install-Guide/macos-limits.html#cpu-support).
+  - Specific professional applications may need to be patched for AMD processor such as Adobe apps, Davinci Resolve, etc.
+  - Virtualization (Apple Hypervisor and the apps using this like AVD on Android Studio, Parallels) is not working but VirtualBox works.
 
 ### Doesn't work
 
 - Sidecar
-- Probably there's something that I couldn't find yet (I am a software engineer :smiley:). For further information that the common limits of the AMD Hackintosh systems, please refer to the [CPU support part of the Dortania's OpenCore Guide](https://dortania.github.io/OpenCore-Install-Guide/macos-limits.html#cpu-support).
 
 ## References
 
