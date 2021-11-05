@@ -33,21 +33,22 @@ This repository contains the EFI directory for Ryzen 3900X and Gigabyte X570 Aor
 
 ### WARNING
 
-- This EFI contains additional kexts in **config.plist** rather than the essential things for X570 + Zen2 CPU. You should remove them to apply this to your PC. I recommend you use this as only a reference resource, do not use this configuration on the fly or you have to know what you are going to do. You should make your own config.plist file for your PC.
-- **I'm not responsible for any damage to your device with this EFI. Process at your own risk!**
+- I recommend you use this as only a reference resource.
+  - Obviously, this build may not be the best one.
+  - This EFI contains additional kexts in **config.plist** rather than only the essential things for X570 + Zen2 CPU. You should remove them before using this on your PC.
 
 ### One more, check this before you use
 
-In the [config.plist](EFI/OC/config.plist) file, I've replaced the private serial codes into the `EDIT_HERE` words because to keep into be safe my personal information.
+In the [config.plist](EFI/OC/config.plist) file, I've replaced the private serial codes into the `EDIT_HERE` words because to keep my personal information safe.
 
-So if you are going to use this, you have to make sure that the `EDIT_HERE` text must be changed to yours. To generate the serial key, please refer to the [Dortania's OpenCore Guide](https://dortania.github.io/OpenCore-Install-Guide/AMD/zen.html#platforminfo). When you about to generate one, you should select **MacPro7,1** to proper use your machine.
+So if you are going to use this, you have to make sure that the `EDIT_HERE` texts are changed to yours. To generate the serial key, please refer to the [Dortania's OpenCore Guide](https://dortania.github.io/OpenCore-Install-Guide/AMD/zen.html#platforminfo). When you are about to generate one, you should select `MacPro7,1` to properly use your machine.
 
 > - If you are going to convert SMBIOS from **iMacPro1,1** to **MacPro7,1**, make sure that you must logout Apple ID from your current system and regenerate all the SMBIOS details such as MLB, serial number, UUID for MacPro7,1.
 > - If your CPU has less than 8 cores, go to `config.plist` file and find "PlatformInfo->Generic" and change the "ProcessorType" from 0 to 1537.
 
 ### You got another one you must check
 
-From the recent AMD CPU patch, now we have to specify the CPU core counts to the `algrey - Force cpuid_cores_per_package` nodes. Currently, my EFI setup sets that for the **12-core** CPU model since I'm using Ryzen 3900X.
+From the recent AMD CPU patch, now we have to specify the CPU core counts to the `algrey - Force cpuid_cores_per_package` nodes. Currently, my EFI setup sets that for the **12-core** CPU model because I'm using Ryzen 3900X.
 
 - `algrey - Force cpuid_cores_per_package`
   - 10.13,10.14
@@ -65,13 +66,13 @@ Please refer to [the author's description](https://github.com/AMD-OSX/AMD_Vanill
 
 ### ACPI
 
-- SSDT-HPET.aml
-- SSDT-NVME.aml
-- SSDT-PLUG.aml
-- SSDT-SBRG.aml
-- SSDT-SBUS-MCHC.aml
-- SSDT-EC-USBX-DESKTOP.aml
-- SSDT-XHC.aml
+- SSDT-HPET.aml - Fixes IRQ conflicts
+- SSDT-NVME.aml - Makes NVMe drives shown as an internal storage
+- SSDT-PLUG.aml - Fixes CPU power management
+- SSDT-SBRG.aml - Fixes EC, RTC, IRQ conflicts
+- SSDT-SBUS-MCHC.aml - Fixes SMBus support
+- SSDT-EC-USBX-DESKTOP.aml - Fixes embedded controller and USB power properties
+- SSDT-XHC.aml - Fixes USB ports mapping
 
 ### Drivers
 
@@ -106,20 +107,25 @@ Please refer to [the author's description](https://github.com/AMD-OSX/AMD_Vanill
 ### Works
 
 - Almost everything including Apple continuity (Handoff, iMessage, Airdrop, Facetime, ...).
-- Also analog audio output on the front/back panel works, but not tested line in/out, digital out, and microphone
 
 ### Partially works
 
-- [CPU support part of the Dortania's OpenCore Guide](https://dortania.github.io/OpenCore-Install-Guide/macos-limits.html#cpu-support).
-  - Specific professional applications may need to be patched for AMD processor such as Adobe apps, Davinci Resolve, etc.
+- 3.5mm audio jacks
+  - The speaker output on the front/back panel works.
+  - The microphone input on the front/back panel doesn't work.
+  - Have not tested line in/out and digital out.
+- The common Ryzentosh issues. Please refer to the CPU support part of [Dortania's OpenCore Guide](https://dortania.github.io/OpenCore-Install-Guide/macos-limits.html#cpu-support)
+  - Specific professional applications may need to be patched for AMD processors such as Adobe apps, Davinci Resolve, etc.
   - Virtualization (Apple Hypervisor and the apps using this like AVD on Android Studio, Parallels) is not working but VirtualBox works.
 
 ### Doesn't work
 
 - Sidecar
 
-## References
+## Main References
+
+I've got the SSDTs and configuring hints from the following links.
 
 - <https://dortania.github.io/OpenCore-Install-Guide/>
 - <https://forum.amd-osx.com/index.php?threads/ms-x570-aorus-elite-5700-xt-r7-3800x-big-sur-oc-0-6-6.1524/>
-- <https://forum.amd-osx.com/index.php?threads/audiogods-gigabyte-aorus-x570-pro-pro-wifi-ultra-master-big-sur-monterey-beta-opencore-0-7-3-efi.1344/>
+- <https://forum.amd-osx.com/index.php?threads/audiogods-gigabyte-aorus-x570-pro-pro-wifi-ultra-master-big-sur-monterey-beta-opencore-0-7-4-efi.1344/>
