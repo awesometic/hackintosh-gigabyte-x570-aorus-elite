@@ -16,7 +16,7 @@ This repository contains the EFI directory for Ryzen 3900X and Gigabyte X570 Aor
 | Memory       | Samsung DDR4 2666MHz 16GB 2EA                    | Overclocked at 3600MHz with 18-22-22-44 timing |
 | Graphics     | XFX AMD Radeon RX 5700 XT 8GB GDDR6 RAW II Ultra | Changed its thermal pad and thermal paste      |
 | NVMe 1       | Samsung 980 PRO 1TB                              | Windows 11 installed                           |
-| NVMe 2       | RevuAhn NX2300 1TB                               | KDE neon installed                             |
+| NVMe 2       | RevuAhn NX2300 1TB                               | Ubuntu 22.04 installed                         |
 | NVMe 3       | WD Black SN750 500GB (via PCIe to NVMe adapter)  | macOS 12 installed                             |
 | SSD 1        | Sandisk Ultra 3D 1TB                             | Miscellaneous storage                          |
 | PCI Ethernet | EFM ipTIME PX2500 2.5 GbE LAN Card (RTL8125B)    | Using this as the main Ethernet device         |
@@ -62,7 +62,7 @@ Please refer to [the author's description](https://github.com/AMD-OSX/AMD_Vanill
 
 ### OpenCore
 
-- Version: 0.7.5
+- Version: 0.7.9
 
 ### ACPI
 
@@ -106,7 +106,7 @@ Please refer to [the author's description](https://github.com/AMD-OSX/AMD_Vanill
 
 ### Works
 
-- Almost everything including Apple continuity (Handoff, iMessage, Airdrop, Facetime, ...).
+- Almost everything including Apple continuity (Handoff, iMessage, Airdrop, Facetime, Universal Control, ...).
 
 ### Partially works
 
@@ -121,6 +121,9 @@ Please refer to [the author's description](https://github.com/AMD-OSX/AMD_Vanill
 ### Doesn't work
 
 - Sidecar
+- Ethernet (Our NIC, Intel I211)
+  - After macOS 12 Monterey, the kext `SmallTreeIntel82576.kext` is not working anymore. It detects the NIC device but reports the cable is disconnected.
+  - <https://github.com/khronokernel/SmallTree-I211-AT-patch/issues/3>
 
 ## Main References
 
