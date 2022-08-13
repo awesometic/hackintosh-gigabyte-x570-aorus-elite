@@ -1,6 +1,6 @@
 # Ryzen Hackintosh EFI
 
-![Ryzen Hackintosh](docs/hackintosh_macos_monterey.png)
+![Ryzen Hackintosh](docs/hackintosh_macos_ventura.png)
 ![Ryzen Hackintosh - About this Mac](docs/about_this_mac.png)
 
 ## What is this
@@ -12,12 +12,12 @@ This repository contains the EFI directory for Ryzen 3900X and Gigabyte X570 Aor
 | Component    | Product Name                                     | Note                                           |
 |--------------|--------------------------------------------------|------------------------------------------------|
 | CPU          | AMD Ryzen 9 3900X                                | PBO enabled                                    |
-| Mainboard    | Gigabyte X570 Aorus Elite                        | F35 BIOS                                       |
-| Memory       | Samsung DDR4 2666MHz 16GB 2EA                    | Overclocked at 3600MHz with 18-22-22-44 timing |
+| Mainboard    | Gigabyte X570 Aorus Elite                        | F37c BIOS                                      |
+| Memory       | Samsung DDR4 2666MHz 16GB 2EA                    | Overclocked at 3200MHz with 16-18-18-36 timing |
 | Graphics     | XFX AMD Radeon RX 5700 XT 8GB GDDR6 RAW II Ultra | Changed its thermal pad and thermal paste      |
 | NVMe 1       | Samsung 980 PRO 1TB                              | Windows 11 installed                           |
-| NVMe 2       | RevuAhn NX2300 1TB                               | Ubuntu 22.04 installed                         |
-| NVMe 3       | WD Black SN750 500GB (via PCIe to NVMe adapter)  | macOS 12 installed                             |
+| NVMe 2       | RevuAhn NX2300 1TB                               | KDE neon installed                             |
+| NVMe 3       | WD Black SN750 500GB (via PCIe to NVMe adapter)  | macOS 13 installed                             |
 | SSD 1        | Sandisk Ultra 3D 1TB                             | Miscellaneous storage                          |
 | PCI Ethernet | EFM ipTIME PX2500 2.5 GbE LAN Card (RTL8125B)    | Using this as the main Ethernet device         |
 | BT/WIFI      | Fenvi T919 (BCM94360CD)                          |                                                |
@@ -37,7 +37,7 @@ This repository contains the EFI directory for Ryzen 3900X and Gigabyte X570 Aor
   - Obviously, this build may not be the best one.
   - This EFI contains additional kexts in **config.plist** rather than only the essential things for X570 + Zen2 CPU. You should remove them before using this on your PC.
 
-### One more, check this before you use
+### Check this before you use
 
 In the [config.plist](EFI/OC/config.plist) file, I've replaced the private serial codes into the `EDIT_HERE` words because to keep my personal information safe.
 
@@ -46,7 +46,9 @@ So if you are going to use this, you have to make sure that the `EDIT_HERE` text
 > - If you are going to convert SMBIOS from **iMacPro1,1** to **MacPro7,1**, make sure that you must logout Apple ID from your current system and regenerate all the SMBIOS details such as MLB, serial number, UUID for MacPro7,1.
 > - If your CPU has less than 8 cores, go to `config.plist` file and find "PlatformInfo->Generic" and change the "ProcessorType" from 0 to 1537.
 
-### You got another one you must check
+### You got another things you must check
+
+#### Different options by CPU core counts
 
 From the recent AMD CPU patch, now we have to specify the CPU core counts to the `algrey - Force cpuid_cores_per_package` nodes. Currently, my EFI setup sets that for the **12-core** CPU model because I'm using Ryzen 3900X.
 
@@ -55,14 +57,24 @@ From the recent AMD CPU patch, now we have to specify the CPU core counts to the
     - B8**0C**0000 0000
   - 10.15,11.0
     - BA**0C**0000 0000
-  - 12.0
+  - 12.0,13.0
     - BA**0C**0000 0090
 
 Please refer to [the author's description](https://github.com/AMD-OSX/AMD_Vanilla#read-me-first) to get further information.
 
+#### About the Above 4G Decoding option in BIOS
+
+In my setup, I disabled **Above 4G Decoding** in my BIOS and added `npci=0x3000` to the boot args because it doesn't boot with that option enabled.
+
+If you want to use my EFI setup, you have to check whether this option enabled or not, if you want to enable **Above 4G Decoding** then you should remove that `npci=0x3000` arguments from the `boot-args`.
+
+#### About fixing PAT methods
+
+I choose Shaneee's one due to the better GPU performance. If you have trouble with HDMI/DP audio, edit `config.plist` to use Algrey's one.
+
 ### OpenCore
 
-- Version: 0.7.9
+- Version: 0.8.3
 
 ### ACPI
 
@@ -123,7 +135,9 @@ Please refer to [the author's description](https://github.com/AMD-OSX/AMD_Vanill
 - Sidecar
 - Ethernet (Our NIC, Intel I211)
   - After macOS 12 Monterey, the kext `SmallTreeIntel82576.kext` is not working anymore. It detects the NIC device but reports the cable is disconnected.
-  - <https://github.com/khronokernel/SmallTree-I211-AT-patch/issues/3>
+    - <https://github.com/khronokernel/SmallTree-I211-AT-patch/issues/3>
+  - In some systems, AppleGB would work.
+    - <https://github.com/donatengit/AppleIGB>
 
 ## Main References
 
