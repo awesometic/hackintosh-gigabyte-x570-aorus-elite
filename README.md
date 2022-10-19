@@ -74,7 +74,7 @@ I choose Shaneee's one due to the better GPU performance. If you have trouble wi
 
 ### OpenCore
 
-- Version: 0.8.3
+- Version: 0.8.5
 
 ### ACPI
 
