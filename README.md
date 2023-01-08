@@ -74,7 +74,7 @@ I choose Shaneee's one due to the better GPU performance. If you have trouble wi
 
 ### OpenCore
 
-- Version: 0.8.5
+- Version: 0.8.8
 
 ### ACPI
 
@@ -83,8 +83,7 @@ I choose Shaneee's one due to the better GPU performance. If you have trouble wi
 - SSDT-PLUG.aml - Fixes CPU power management
 - SSDT-SBRG.aml - Fixes EC, RTC, IRQ conflicts
 - SSDT-SBUS-MCHC.aml - Fixes SMBus support
-- SSDT-EC-USBX-DESKTOP.aml - Fixes embedded controller and USB power properties
-- SSDT-XHC.aml - Fixes USB ports mapping
+- SSDT-EC-USBX-AMD.aml - Fixes embedded controller and USB power properties
 
 ### Drivers
 
@@ -94,7 +93,6 @@ I choose Shaneee's one due to the better GPU performance. If you have trouble wi
 
 ### Kexts
 
-- AGPMInjector.kext
 - AMDRyzenCPUPowerManagement.kext
 - AppleALC.kext
 - AppleMCEReporterDisabler.kext
